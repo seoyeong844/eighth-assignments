@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="{% url 'postcreate' %}>"새 글 쓰기</a>
+{% for crudapp in crudapps.all %}
+    <h1>제목: {{crudapp.title}}</h1>
+    <p>날짜: {{crudapp.pub_date}}</p>
+    <p>미리보기: {{crudapp.summary}}<a href="{% url 'detail' crudapp.id %}">...more</a></p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>자세한 본문 내용</h1>
+<br>
+<h1>제목: {{crudapp.title}}</h1>
+<p>작성날짜: {{crudapp.pub_date}}</p>
+<p>자세한 본문: {{crudapp.body}}</p>
+<a href="{% url 'postupdate' crudapp.id %}">수정하기</a>
+<br>
+<a href="{% url 'postdelete' crudapp.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+{% endblock %}
